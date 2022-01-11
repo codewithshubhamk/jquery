@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web page menu section hide/show</title>
+    <script src="https://kit.fontawesome.com/532468860f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <button class="menu-btn"><i class="fas fa-bars fa-3x"></i></button>
+            <button class="login-btn">Login.</button>
+        </div>
+
+        <div class="menu-section">
+            <ul>
+                <li class="html-lnk" style="background-color: rgb(190, 243, 137);"><a href="#">HTML</a></li>
+                <li class="css-lnk" style="background-color: rgb(247, 177, 151);"><a href="#">CSS</a></li>
+                <li class="js-lnk" style="background-color: rgb(159, 190, 247);"><a href="#">JavaScript</a></li>
+                <li class="jqry-lnk" style="background-color: rgb(167, 243, 243);"><a href="#">jQUERY</a></li>
+                <li class="all-lnk" style="background-color: rgb(139, 97, 236);"><a href="#">All</a></li>
+            </ul>
+        </div>
+        <div class="data">
+            <div class="data-1">
+                <h1>HTML</h1>
+                <span>The HyperText Markup Language, or HTML is the standard markup language for documents designed to
+                    be displayed in a web browser.</span>
+            </div>
+            <div class="data-2">
+                <h1>CSS</h1>
+                <span>Cascading Style Sheets is a style sheet language used for describing the presentation of a
+                    document written in a markup language such as HTML.</span>
+            </div>
+            <div class="data-3">
+                <h1>JavaScript</h1>
+                <span>JavaScript is a scripting language that enables you to create dynamically updating content,
+                    control multimedia, animate images, and pretty much everything else. </span>
+            </div>
+            <div class="data-4">
+                <h1>jQUERY</h1>
+                <span>How define jQuery in JavaScript?
+                    jQuery is a lightweight, "write less, do more", JavaScript library. The purpose of jQuery is to make
+                    it much easier to use JavaScript on your website. jQuery takes a lot of common tasks that require
+                    many lines of JavaScript code to accomplish, and wraps them into methods that you can call with a
+                    single line of code.</span>
+            </div>
+        </div>
+        <div class="form">
+            <img src="img/—Pngtree—user login icon.png" alt="user icon">
+            <input class="input-email" type="email" name="userid" placeholder="Enter email address">
+            <input class="input-pass" type="password" name="password" placeholder="Enter password">
+            <input class="input-sbt" type="submit" name="login" placeholder="Login"> <br>
+            <label class="chkbx">
+                <input type="checkbox" name="remember">
+                Remember me
+            </label>
+            <button class="cncl-btn">Cancel</button>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" </script></script>
+
+    <script>
+
+        // menu section
+        $(document).ready(function () {
+            $(".menu-btn").click(function () {
+                $(".menu-section").toggle();
+                $(".data-1, .data-2, .data-3, .data-4").hide();
+            })
+
+            // here we want to hide menu, data and form before enter so, we use the hide attribute with function
+            $(".menu-section, .data-1, .data-2, .data-3, .data-4, .form").hide(function () { })
+
+            // html link
+            $(".html-lnk").click(function () {
+                $(".data-1").show();
+                $(".data-2, .data-3, .data-4").hide();
+            })
+            $(".data-1").click(function () {
+                $(".data-1").hide();
+            })
+
+            //css link
+            $(".css-lnk").click(function () {
+                $(".data-2").show();
+                $(".data-1, .data-3, .data-4").hide();
+            })
+            $(".data-2").click(function () {
+                $(".data-2").hide();
+            })
+
+            //js link
+            $(".js-lnk").click(function () {
+                $(".data-3").show();
+                $(".data-1, .data-2, .data-4").hide();
+            })
+            $(".data-3").click(function () {
+                $(".data-3").hide();
+            })
+
+            //jquery link
+            $(".jqry-lnk").click(function () {
+                $(".data-4").show();
+                $(".data-1, .data-2, .data-3").hide();
+            })
+            $(".data-4").click(function () {
+                $(".data-4").hide();
+            })
+
+            // all link
+            $(".all-lnk").click(function () {
+                $(".data-1, .data-2, .data-3, .data-4").show();
+            })
+
+            //form section
+            $(".login-btn").click(function () {
+                $(".form").slideDown(800);
+            })
+            $(".cncl-btn").click(function () {
+                $(".form").hide();
+            })
+        })
+    </script>
+
+</body>
+
+</html>
